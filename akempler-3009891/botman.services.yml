@@ -1,0 +1,9 @@
+services:
+  botman.listener:
+    class: Drupal\botman\Listener\BotmanListener
+  plugin.manager.botman.widget:
+    class: Drupal\botman\BotmanWidgetManager
+    parent: default_plugin_manager
+  plugin.manager.botman.chatbot:
+    class: Drupal\botman\BotmanChatbotManager
+    parent: default_plugin_manager

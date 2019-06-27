@@ -1,0 +1,5 @@
+botman.settings:
+  title: 'Botman'
+  parent: system.admin_config
+  description: 'Configure Botman.'
+  route_name: botman.settings

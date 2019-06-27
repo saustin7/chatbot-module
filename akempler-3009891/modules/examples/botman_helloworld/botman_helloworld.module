@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_preprocess_web_widget().
+ *
+ * Example of overriding the default css file.
+ */
+function botman_helloworld_preprocess_web_widget(&$variables, $hook) {
+
+  $variables['css_path'] = drupal_get_path('module', 'botman_helloworld') . '/css/web_widget.css';
+}

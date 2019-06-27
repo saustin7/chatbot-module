@@ -1,0 +1,49 @@
+<?php
+/**
+ * Example implementation of the BotmanChatbot Plugin.
+ */
+
+namespace Drupal\botman_helloworld\Plugin\BotmanChatbot;
+
+use Drupal\botman\BotmanChatbotBase;
+use Drupal\botman\BotmanChatbotInterface;
+
+// Include our Conversation.
+use Drupal\botman_helloworld\Conversations\WelcomeConversation;
+
+use BotMan\BotMan\BotMan;
+use Drupal\Core\EventSubscriber\ResponseGeneratorSubscriber;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @BotmanChatbot(
+ *  id = "helloworld",
+ *  label = @Translation("HelloWorld")
+ * )
+ */
+class HelloWorldChatbot extends BotmanChatbotBase implements BotmanChatbotInterface {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function initialize(Botman $botman) {
+
+    $this->botman->hears('hello|hi|hola', function (Botman $botman) {
+      $this->botman->reply('Hello, nice to meet you.');
+    });
+
+    $this->botman->hears('bye|goodbye', function (Botman $botman) {
+      $this->botman->reply('See you later alligator.');
+    });
+
+    $this->botman->hears('help', function (Botman $botman) {
+      $this->botman->startConversation(new WelcomeConversation());
+    });
+
+    $this->botman->fallback(function(Botman $botman) {
+      $this->botman->reply('Sorry, I did not understand your request.' . PHP_EOL . 'Type help at any time.');
+    });
+
+  }
+
+}

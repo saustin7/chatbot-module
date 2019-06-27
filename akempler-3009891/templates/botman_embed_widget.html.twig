@@ -1,0 +1,40 @@
+
+<div class="chat_container">
+    <div class="chat_container__inner">
+
+        <div class="chat_container_header">
+            <h1 class="chat_title">{{ header_title }}</h1>
+        </div>
+
+        <div id="app-messages" class="app_messages">
+            <div class="message" v-for="message in messages">
+                <div class="message-from">
+                    <strong>
+                        {% verbatim %}
+                            <i class="fa fa-laptop" v-if="message.from == message.chatbot_name"></i>
+                            <i class="fa fa-user" v-if="message.from != message.chatbot_name"></i>
+                            {{ message.from }}
+                        {% endverbatim %}
+                    </strong>
+                </div>
+                <div class="message-text">
+                    <span v-html="message.text"></span>
+                </div>
+                {% verbatim %}
+                    <p class="ChatLog__message" v-if="message.buttons && message.buttons.length">
+                        <a :href="button.url" class="chatButton" @click="button.value ? sendMessage(button.value) : null" v-for="button in message.buttons">{{ button.text }}</a>
+                    </p>
+                {% endverbatim %}
+            </div>
+        </div>
+
+        <div class="chat_container_footer">
+            <form class="input-group chat_form" id="app-form">
+                <input type="text" class="form-control chat_input" id="message-input" placeholder="Enter your messsage..." v-on:keyup="keyPress" autocomplete="off" />
+                <button id="message-send" class="btn btn-primary" disabled="disabled" v-on:click="send"><i class="fa fa-comment" title="Send"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.2.1"></script>

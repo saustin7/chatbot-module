@@ -1,0 +1,8 @@
+name: Botman
+description: Provides integration with the botman.io framework.
+package: botman
+type: module
+core: 8.x
+
+dependencies:
+  - key

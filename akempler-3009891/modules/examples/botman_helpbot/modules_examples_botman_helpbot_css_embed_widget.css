@@ -1,0 +1,46 @@
+.chat_container {
+    border: 1px solid #aaaa;
+}
+
+.app_messages {
+    height: 450px;
+    overflow-y: scroll;
+}
+
+h1.chat_title {
+    margin: 0;
+}
+
+.chat_container_header {
+    padding: 12px;
+    background-color: #bbf9bc;
+}
+
+.app_messages {
+    padding: 20px;
+}
+
+.app_messages .message {
+    margin-bottom: 12px;
+}
+
+.chat_form .chat_input {
+    width: 92%;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+}
+
+.chat_container_footer {
+    padding: 8px;
+    background-color: #dcf0f9;
+}
+
+.chat_container_footer button {
+    width: 36px;
+    height: 36px;
+}
+
+.chat_container_footer button i.fa {
+    font-size: 1.2rem;
+}

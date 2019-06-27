@@ -1,0 +1,14 @@
+# Local & project files
+# -----------------------
+*~
+*.swp
+.DS_Store
+.DS_Store/
+.project/
+.idea
+
+
+# Exclude packages
+# -----------------------
+vendor/
+node_modules/

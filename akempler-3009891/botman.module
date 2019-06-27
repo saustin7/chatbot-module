@@ -1,0 +1,18 @@
+<?php
+
+function botman_theme($existing, $type, $theme, $path) {
+  return [
+    'web_widget' => [
+      'template' => 'botman_web_widget',
+      'variables' => [
+        'css_path' => NULL,
+      ],
+    ],
+    'embed_widget' => [
+      'template' => 'botman_embed_widget',
+      'variables' => [
+        'header_title' => 'Chat'
+      ],
+    ],
+  ];
+}

@@ -1,0 +1,87 @@
+botman.web_widget:
+  remote: https://botman.io
+  version: 1
+  header: false
+  license:
+    name: MIT
+    url: https://github.com/botman/botman
+    gpl-compatible: true
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+  js:
+    js/botman_web_widget.js:
+      header: true
+    https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js:
+      type: external
+      minified: true
+
+botman.embed_widget:
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - botman/axios
+    - botman/vuejs
+  js:
+    js/botman_embed_widget.js: {}
+  css:
+    base:
+      css/embed_widget.css: {}
+
+botman.axios:
+  remote: https://github.com/axios/axios
+  version: 0.18.0
+  header: false
+  license:
+    name: MIT
+    url: https://github.com/axios/axios/blob/master/LICENSE
+    gpl-compatible: true
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+  js:
+    https://unpkg.com/axios/dist/axios.min.js:
+      type: external
+      minified: true
+
+botman.vuejs:
+  remote: https://github.com/vuejs/vue.git
+  version: 2.5.17
+  header: false
+  license:
+    name: MIT
+    url: https://cdn.jsdelivr.net/npm/vue/LICENSE
+    gpl-compatible: true
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+  js:
+    https://cdn.jsdelivr.net/npm/vue:
+      type: external
+      minified: true
+
+botman.colorpicker:
+  license:
+    name: "GPL-3.0"
+    url: http://www.gnu.org/licenses/gpl-3.0.txt
+    gpl-compatible: true
+  js:
+    js/jscolor.js: {}
+    js/colorpicker.js: {}
+  dependencies:
+   - core/drupal
+   - core/jquery
+   - core/drupalSettings
+
+botman.font_awesome:
+  remote: https://fortawesome.github.io/Font-Awesome/
+  version: 4.5.0
+  license:
+    name: MIT
+    url: https://fortawesome.github.io/Font-Awesome/license/
+    gpl-compatible: true
+  css:
+    theme:
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css: { type: external, minified: true }

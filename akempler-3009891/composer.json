@@ -1,0 +1,17 @@
+{
+  "name": "drupal/botman",
+  "description": "Integrates the botman.io framework into Drupal.",
+  "homepage": "https://drupal.org/project/botman",
+  "authors": [
+    {
+      "name": "Adam Kempler (akempler)",
+      "homepage": "https://www.drupal.org/u/akempler",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "botman/botman": "^2.4",
+    "botman/driver-web": "^1.5",
+    "symfony/cache": "^4.0"
+  }
+}

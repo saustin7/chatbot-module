@@ -1,0 +1,10 @@
+widget_settings:
+  web_widget:
+    header_bg_color: 'cde0f8'
+    header_text_color: '000000'
+    header_title: 'How can we help?'
+    intro_message: ''
+    widget_launcher_bg_color: 'ffffff'
+  embed_widget:
+    header_bg_color: 'dcf0f9'
+    footer_bg_color: 'dcf0f9'

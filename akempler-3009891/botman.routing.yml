@@ -1,0 +1,28 @@
+route_callbacks:
+  - '\Drupal\botman\Routing\BotmanRoutes::routes'
+
+botman.settings:
+  path: admin/config/botman
+  defaults:
+    _title: 'Botman Settings'
+    _form: \Drupal\botman\Form\BotmanSettingsForm
+  requirements:
+    _permission: 'administer site configuration'
+
+# Renders the chat interface.
+botman.widget:
+  path: '/botman/widget'
+  defaults:
+    _title: 'Chatbot'
+    _controller: \Drupal\botman\Controller\WebWidgetController::widget
+  requirements:
+    _permission: 'access content'
+
+# Provides the callback for handling the chatbot initialization.
+botman.chat:
+  path: '/botman/{plugin}'
+  defaults:
+    _title: 'botman'
+    _controller: \Drupal\botman\Controller\BotmanController::listener
+  requirements:
+    _permission: 'access content'

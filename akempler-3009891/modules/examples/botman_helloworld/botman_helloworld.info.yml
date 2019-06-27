@@ -1,0 +1,8 @@
+name: Botman Hello World
+description: Basic botman usage example.
+package: botman
+type: module
+core: 8.x
+
+dependencies:
+  - botman
